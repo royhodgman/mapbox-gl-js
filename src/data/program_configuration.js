@@ -82,7 +82,7 @@ class ConstantBinder implements Binder {
 
     setUniforms(context: Context, program: Program, layer: StyleLayer, {zoom}: { zoom: number }) {
         const value = layer.getPaintValue(this.property, { zoom: this.useIntegerZoom ? Math.floor(zoom) : zoom });
-        const gl = context.gl;  // TODO
+        const gl = context.gl;
 
         if (this.type === 'color') {
             gl.uniform4fv(program.uniforms[`u_${this.name}`], value);
